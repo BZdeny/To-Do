@@ -21,3 +21,11 @@
     font-size: 28px;
     margin-left: 15px;
 }
+.block {
+    list-style-type: none;
+    white-space: nowrap;
+    margin-bottom: 10px;
+}
+.text {
+    display: inline;
+}
