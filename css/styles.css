@@ -1,0 +1,23 @@
+.header {
+    border-radius: 10px;
+    background-color: pink;
+    height: 120px;
+    width: 350px;
+}
+.fa-refresh {
+    margin-left: 305px;
+    margin-top: 18px;
+    font-size: 30px;
+}
+.base {
+    height: 300px;
+    width: 350px;
+    background-color: bisque;
+}
+#inputText {
+    position: absolute;
+}
+#date {
+    font-size: 28px;
+    margin-left: 15px;
+}
