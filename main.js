@@ -16,10 +16,11 @@ function monthDate(date) {
 
 let listArray = []
 let arrayId = 0;
+let inputOut
 (function enterKey() {
     document.querySelector('input').addEventListener('keyup', function(e) {
         if (e.keyCode === 13) {
-            let inputOut = this.value
+            inputOut = this.value
             if (inputOut) {
                 plusList(inputOut, arrayId, false, false)
                 listArray.push ({
@@ -29,11 +30,27 @@ let arrayId = 0;
                     trash: false         
                 })
                 arrayId++
-                console.log(listArray)
             }
         }
     })
 })()
+
+const plusItem = document.getElementById('plusItem')
+plusItem.addEventListener('click', () => {
+    inputOut = document.querySelector('input').value
+    if (inputOut) {
+        plusList(inputOut, arrayId, false, false)
+        listArray.push ({
+            name: inputOut,
+            id: arrayId,
+            done: false,
+            trash: false
+        })
+    }
+        arrayId++
+    }
+)
+
 const doneCircle = 'fa-check-circle'
 const undoneCircle = 'fa-circle-thin'   
 const lineThrought = 'lineThrought'
@@ -51,7 +68,7 @@ function completeToDo(complete) {
     complete.classList.toggle(doneCircle)
     complete.classList.toggle(undoneCircle)
     complete.parentNode.querySelector('.text').classList.toggle(lineThrought)
-    listArray[complete.id].done = listArray[complete.id].done ? false : true
+    //listArray[complete.id].done = listArray[complete.id].done ? false : true
     }
 
 function removeElement(remove) {
@@ -60,7 +77,7 @@ function removeElement(remove) {
 }
 
 const list = document.getElementById('list')
-list.addEventListener('click', (event)=>{
+list.addEventListener('click', (event) => {
     let element = event.target
     const complete = event.target.attributes.job.value
     if (complete === 'complete'){
