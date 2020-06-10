@@ -53,13 +53,13 @@ plusItem.addEventListener('click', () => {
 
 const doneCircle = 'fa-check-circle'
 const undoneCircle = 'fa-circle-thin'   
-const lineThrought = 'lineThrought'
+const lineThrough = 'active'
 
 function plusList(n, id, done, trash) {
     if (trash) {return;}
     const doneChange = done ? doneCircle : undoneCircle
-    const doneThrought = done ? lineThrought : ''
-    let text = `<li class="block"> <i class="fa ${doneChange}" aria-hidden="true" id="${id}" job="complete"></i><p class="text ${doneThrought}">${n}</p><i class="fa fa-trash" aria-hidden="true" job ="delete"></i></li>`
+    const doneThrough = done ? lineThrough : ''
+    let text = `<li class="block"> <i class="fa ${doneChange}" aria-hidden="true" id="${id}" job="complete"></i><p class="text">${n}</p><i class="fa fa-trash" aria-hidden="true" job ="delete"></i></li>`
     document.getElementById('list').insertAdjacentHTML('beforeend', text)
     document.querySelector('input').value = ''
     }
@@ -67,8 +67,8 @@ function plusList(n, id, done, trash) {
 function completeToDo(complete) {
     complete.classList.toggle(doneCircle)
     complete.classList.toggle(undoneCircle)
-    complete.parentNode.querySelector('.text').classList.toggle(lineThrought)
-    //listArray[complete.id].done = listArray[complete.id].done ? false : true
+    complete.parentNode.querySelector('.text').classList.toggle(lineThrough)
+    listArray[complete.id].done = true
     }
 
 function removeElement(remove) {
@@ -87,3 +87,5 @@ list.addEventListener('click', (event) => {
         removeElement(element)
     }
 })
+
+

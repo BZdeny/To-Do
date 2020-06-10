@@ -1,3 +1,6 @@
+.active {
+    text-decoration: line-through;
+}
 .header {
     border-radius: 10px;
     background-color: pink;
