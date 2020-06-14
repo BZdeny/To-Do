@@ -1,11 +1,17 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
 .active {
     text-decoration: line-through;
 }
 .header {
     border-radius: 10px;
-    background-color: pink;
+    border: 1px;
+    background-image: url(back.jpg);
+    background-size: cover;
     height: 120px;
     width: 350px;
+    color: white;
 }
 .fa-refresh {
     margin-left: 305px;
@@ -13,12 +19,26 @@
     font-size: 30px;
 }
 .base {
+    display: grid;
+    grid-template-columns: auto;
+    border-radius: 10px;
     height: 300px;
     width: 350px;
-    background-color: bisque;
 }
 #inputText {
-    position: absolute;
+    font-size: 25px;
+    width: 280px;
+    border: none;
+    top: 390px;
+    left: 40px;
+    position: fixed;
+    outline-color: rgb(72, 72, 255);
+}
+.fa-plus-circle {
+    position: fixed;
+    font-size: 33px;
+    top: 390px;
+    color: rgb(72, 72, 255);
 }
 #date {
     font-size: 28px;
@@ -31,4 +51,20 @@
 }
 .text {
     display: inline;
+}
+#list {
+    width: 310px;
+    height: 230px;
+    overflow: auto;
+    font-size: 24px;
+    position: relative;
+}
+.fa-trash {
+    position: absolute;
+    left: 300px;
+}
+.fa-circle-thin, .fa-check-circle {
+    position: absolute;
+    left: 5px;
+    color: rgb(72, 72, 255);
 }
